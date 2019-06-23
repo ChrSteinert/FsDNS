@@ -1,0 +1,6 @@
+source https://www.nuget.org/api/v2
+
+nuget System.Memory
+nuget Expecto
+
+github ChrSteinert/BytesTable BytesTable.fsx

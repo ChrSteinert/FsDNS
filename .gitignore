@@ -1,0 +1,6 @@
+.fake
+.paket/*
+.ionide
+paket-files
+packages
+!.paket/paket.bootstrapper.exe
