@@ -21,6 +21,9 @@ type RRType =
     | MINFO
     | MX
     | TXT
+    | AXFR
+    | MAILB
+    | MAILA
     | All
 
 type RRClass = 

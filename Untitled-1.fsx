@@ -8,10 +8,20 @@ open System
 
 open DnsParser
 
-let message = 
-    "ELOBgAABAAIAAAAAA2FwaQlyZW1lbWJlYXIDY29tAAABAAHADAABAAEAAACVAARoEUpswAwAAQABAAAAlQAEaBFJbA=="
+let query = // Query for A c.bing.com
+    "HNoBAAABAAAAAAAAAWMEYmluZwNjb20AAAEAAQ=="
     |> Convert.FromBase64String
 
-message
+let response = // Answer for c.bing.com
+    "HNqBgAABAAQAAAAAAWMEYmluZwNjb20AAAEAAcAMAAUAAQAABk4AIApjLWJpbmctY29tBmEtMDAw
+    MQhhLW1zZWRnZQNuZXQAwCgABQABAAAAEAACwDPAMwABAAEAAAAQAATMT8XIwDMAAQABAAAAEAAE
+    DWsVyA=="
+    |> Convert.FromBase64String
 
-DnsParser.parseMessage message
+
+
+DnsParser.parseMessage query
+DnsParser.parseMessage response
+
+response.[29] &&& 0b00111111uy
+0b11000000
